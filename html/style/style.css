@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #2E2E2E;
+}
+
+.menu_row a {
+    text-decoration: none;
+    color: #2E2E2E;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header_content {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.menu_row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu_row > ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type:  none;
+}
+
+.menu_row > ul > li{
+    font: 400 12px/20px Oxygen, serif;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+
+.menu_row > ul > li:not(:last-child) {
+    margin-right: 41px;
+}
+
+.logo {
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.main_container{
+    width: 100%;
+    display: flex;
+}
+
+.main_container_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 110px 0 113px 0;
+}
+
+.article_title {
+    font: 400 50px/51px Lora, serif;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.article_description {
+    font: 400 17px/20px Oxygen, serif;
+    letter-spacing: 0em;
+    text-align: center;
+    opacity: 67%;
+    margin: 20px 0 0 0;
+}
+
+.content_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article_text {
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+}
+
+.article_text > p {
+    font: 400 24px/35px Oxygen, serif;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.image {
+    width: 100%;
+    height: 534px;
+    margin: 0 0 140px 0;
+}
+.image > img {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    margin: 0 0 135px 0;
+}
+
+.footer_container {
+    width: 100%;
+    background-image: url("../images/image_footer.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.footer_content {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_content a {
+    color: white;
+}
