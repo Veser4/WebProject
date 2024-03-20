@@ -1,5 +1,5 @@
 <div class="post">
-    <a href="/post?id=<?= $post["id"] ?>" class="post__link"></a>
+    <a href="/pages/post?id=<?= $post["id"] ?>" class="post__link"></a>
     <?php if ($post["category"] != "") {?>
         <div class="post__category <?=strtolower($post["category"]) ?>"><?= $post["category"] ?></div>
     <?php }?>

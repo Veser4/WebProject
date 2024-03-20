@@ -5,10 +5,10 @@
             "category" => "PHOTOGRAPHY",
             "title" => "The Road Ahead",
             "subtitle" => "The road ahead might be paved - it might not be.",
-            "author_image" => "images/logoMat.jpg",
+            "author_image" => "http://localhost:8001/static/images/logoMat.jpg",
             "author" => "Mat Vogels",
-            "date" => "September 25, 2015",
-            "background" => "images/background1.png",
+            "date" => date('F d, Y', 1443139200),
+            "background" => "http://localhost:8001/static/images/background1.png",
             "link" => "index.html",
         ],
         [
@@ -16,72 +16,72 @@
             "category" => "ADVENTURE",
             "title" => "From Top Down",
             "subtitle" => "Once a year, go someplace you’ve never been before.",
-            "author_image" => "images/logoWilliam.jpg",
+            "author_image" => "http://localhost:8001/static/images/logoWilliam.jpg",
             "author" => "William Wong",
-            "date" => "September 25, 2015",
-            "background" => "/images/background2.png",
+            "date" => date('F d, Y', 1443139200),
+            "background" => "http://localhost:8001/static/images/background2.png",
             "link" => "https://www.ispring.ru/",
         ],
     ];
     $mostRecentPostBlock = [
         [
             "id" => 1,
-            "background" => "images/background3.jpg",
+            "background" => "http://localhost:8001/static/images/background3.jpg",
             "title" => "Still Standing Tall",
             "subtitle" => "Life begins at the end of your comfort zone.",
-            "author_image" => "images/logoWilliam.jpg",
+            "author_image" => "http://localhost:8001/static/images/logoWilliam.jpg",
             "author" => "William Wong",
-            "date" => "9/25/2015",
+            "date" => date('m/d/Y', 1443139200),
             "link" => "https://www.ispring.ru/",
         ],
         [
             "id" => 2,
-            "background" => "images/background4.png",
+            "background" => "http://localhost:8001/static/images/background4.png",
             "title" => "Sunny Side Up",
             "subtitle" => "No place is ever as bad as they tell you it’s going to be.",
-            "author_image" => "images/logoMat.jpg",
+            "author_image" => "http://localhost:8001/static/images/logoMat.jpg",
             "author" => "Mat Vogels",
-            "date" => "9/25/2015",
+            "date" => date('m/d/Y', 1443139200),
             "link" => "https://www.ispring.ru/",
         ],
         [
             "id" => 3,
-            "background" => "images/background5.png",
+            "background" => "http://localhost:8001/static/images/background5.png",
             "title" => "Water Falls",
             "subtitle" => "We travel not to escape life, but for life not to escape us.",
-            "author_image" => "images/logoMat.jpg",
+            "author_image" => "http://localhost:8001/static/images/logoMat.jpg",
             "author" => "Mat Vogels",
-            "date" => "9/25/2015",
+            "date" => date('m/d/Y', 1443139200),
             "link" => "https://www.ispring.ru/",
         ],
         [
             "id" => 4,
-            "background" => "images/background6.png",
+            "background" => "http://localhost:8001/static/images/background6.png",
             "title" => "Through the Mist",
             "subtitle" => "Travel makes you see what a tiny place you occupy in the world.",
-            "author_image" => "images/logoWilliam.jpg",
+            "author_image" => "http://localhost:8001/static/images/logoWilliam.jpg",
             "author" => "William Wong",
-            "date" => "9/25/2015",
+            "date" => date('m/d/Y', 1443139200),
             "link" => "https://www.ispring.ru/",
         ],
         [
             "id" => 5,
-            "background" => "images/background7.png",
+            "background" => "http://localhost:8001/static/images/background7.png",
             "title" => "Awaken Early",
             "subtitle" => "Not all those who wander are lost.",
-            "author_image" => "images/logoMat.jpg",
+            "author_image" => "http://localhost:8001/static/images/logoMat.jpg",
             "author" => "Mat Vogels",
-            "date" => "9/25/2015",
+            "date" => date('m/d/Y', 1443139200),
             "link" => "https://www.ispring.ru/",
         ],
         [
             "id" => 6,
-            "background" => "images/background8.png",
+            "background" => "http://localhost:8001/static/images/background8.png",
             "title" => "Try it Always",
             "subtitle" => "The world is a book, and those who do not travel read only one page.",
-            "author_image" => "images/logoMat.jpg",
+            "author_image" => "http://localhost:8001/static/images/logoMat.jpg",
             "author" => "Mat Vogels",
-            "date" => "9/25/2015",
+            "date" => date('m/d/Y', 1443139200),
             "link" => "https://www.ispring.ru/",
         ],
     ];
@@ -96,15 +96,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style/mainPageStyle.css">
+    <link rel="stylesheet" href="http://localhost:8001/static/style/mainPageStyle.css">
     <title>MainPage</title>
 </head>
 <body>
     <header class="header">
-        <img src="images/HeaderBackground.jpg" alt="Header Background" class="header__background-image">
+        <img src="http://localhost:8001/static/images/HeaderBackground.jpg" alt="Header Background" class="header__background-image">
         <div class="menu">
             <div class="menu-row">
-                <a href="#" title="Escape"><img src="images/logo_footer.svg" alt="Escape." class="main-menu__logotype"></a>
+                <a href="#" title="Escape"><img src="http://localhost:8001/static/images/logo_footer.svg" alt="Escape." class="main-menu__logotype"></a>
                 <nav class="navigation">
                     <ul class="navigation-list">
                         <li class="navigation-list__item"><a href="#" class="navigation-list__link" title="HOME">HOME</a></li>
@@ -141,7 +141,7 @@
             <hr class="section__line">
             <div class="post-list">
                 <?php foreach ($featuredPostBlock as $post) { 
-                    include("featuredPosts.php");
+                    include("pages/featuredPosts.php");
                 }?>
             </div>
         </div>
@@ -150,16 +150,16 @@
             <hr class="section__line">
             <div class="post-list">
                 <?php foreach ($mostRecentPostBlock as $post) { 
-                    include("mostRecentPosts.php");
+                    include("pages/mostRecentPosts.php");
                 }?>
             </div>
         </div>
     </main>
     <footer class="footer">
-        <img src="images/image_footer.png" alt="Footer Background" class="footer__background-image">
+        <img src="http://localhost:8001/static/images/image_footer.png" alt="Footer Background" class="footer__background-image">
         <div class="menu">
             <div class="menu-row">
-                <a href="#" title="Escape"><img src="images/logo_footer.svg" alt="Escape." class="main-menu__logotype"></a>
+                <a href="#" title="Escape"><img src="http://localhost:8001/static/images/logo_footer.svg" alt="Escape." class="main-menu__logotype"></a>
                 <nav class="navigation">
                     <ul class="navigation-list">
                         <li class="navigation-list__item"><a href="#" class="navigation-list__link" title="HOME">HOME</a></li>
