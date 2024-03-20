@@ -19,8 +19,9 @@
         $sql = "SELECT * FROM post";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo "ID: {$row['id']} - Title: {$row['title']} - Subtitle: {$row['subtitle']} - Date: {$row['publish_date']} - Is Featured: {$row['featured']} <br>";
+            $rows = $result->fetch_all(MYSQLI_ASSOC);
+            foreach ($rows as $row) {
+                echo $row['id'];
             }
         } else {
             echo "0 results";
