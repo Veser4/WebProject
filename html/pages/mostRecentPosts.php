@@ -1,5 +1,5 @@
 <div class="post">
-    <a href="/post?id=<?= $post["id"] ?>" class="post__link"></a>
+    <a href="/pages/post?id=<?= $post["id"] ?>" class="post__link"></a>
     <img src="<?= $post["background"] ?>" alt="background" class="post__background">
     <div class="post-info">
         <h2 class="post__article"><?= $post["title"] ?></h2>
