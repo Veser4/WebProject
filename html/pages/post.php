@@ -1,11 +1,11 @@
 <?php
   include('../modules/moduleSQL.php');
   $conn = createDBConnection();
-  $sql = "SELECT * FROM post";
+  $sql = "SELECT * FROM post WHERE id = {$_GET['id']}";
   $result = $conn->query($sql);
-  $posts = ($result->num_rows > 0) ? $posts = $result->fetch_all(MYSQLI_ASSOC) : [];
+  $post = ($result->num_rows > 0) ? $post = $result->fetch_all(MYSQLI_ASSOC) : [];
   closeDBConnection($conn);
-  if ($_GET['id'] > count($posts)) {
+  if (!(array_key_exists('id', $_GET)) || !(is_numeric($_GET['id'])) || ($result->num_rows == 0)) {
     header("Location: http://localhost:8001/pages/errorPage?type=404");
     exit( );
   }
@@ -46,18 +46,18 @@
       <div class="main_container">
         <div class="main_container_content">
           <div class="article">
-            <h1 class="article_title">#<?=$_GET['id']?> <?= $posts[$_GET['id'] - 1]['title']?></h1>
+            <h1 class="article_title">#<?=$_GET['id']?> <?= $post[0]['title']?></h1>
             <div class="article_description">
-              <?= $posts[$_GET['id'] - 1]['subtitle']?>
+              <?= $post[0]['subtitle']?>
             </div>
           </div>
           <div class="image">
-            <img src="<?= $posts[$_GET['id'] - 1]['image_url']?>" alt="background" />
+            <img src="http://localhost:8001/static/images/<?= $post[0]['image_url']?>" alt="background" />
           </div>
           <div class="content_column">
             <div class="article_text">
               <p>
-                <?= $posts[$_GET['id'] - 1]['content']?>
+                <?= $post[0]['content']?>
               </p>
             </div>
           </div>
