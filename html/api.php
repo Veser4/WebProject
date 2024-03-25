@@ -13,13 +13,14 @@
         $dataAsJson = file_get_contents("php://input");
         $dataAsArray = json_decode($dataAsJson, true);
         if (validCountOfRightParameters($dataAsArray, $expectedKeys)) {
-            $imageName = "background_{$dataAsArray['title']}_" . (end($posts)['id'] + 1);
-            if (validImageCreation($dataAsArray['image_url'], $imageName)) {
+            $imagePost = "background_{$dataAsArray['title']}_" . (end($posts)['id'] + 1);
+            $imageAuthor = "logo_{$dataAsArray['author']}";
+            if ((validImageCreation($dataAsArray['image_url'], $imagePost)) && (validImageCreation($dataAsArray['author_url'], $imageAuthor))) {
                 $keysRow = implode(', ', $expectedKeys);
                 $sql = "INSERT INTO post ({$keysRow}) VALUES
                 ('{$dataAsArray['title']}', '{$dataAsArray['subtitle']}',
-                '{$dataAsArray['content']}', '{$dataAsArray['author']}', '{$dataAsArray['author_url']}', '{$dataAsArray['publish_date']}',
-                '{$imageName}.jpg', '{$dataAsArray['featured']}');";
+                '{$dataAsArray['content']}', '{$dataAsArray['author']}', '{$imageAuthor}.jpg', '{$dataAsArray['publish_date']}',
+                '{$imagePost}.jpg', '{$dataAsArray['featured']}');";
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
                 } else {

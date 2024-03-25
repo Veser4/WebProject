@@ -1,4 +1,4 @@
-<?php 
+<?php
 function saveFile(string $file, string $data): bool {
     $myFile = fopen($file, 'w');
     if ($myFile) {
