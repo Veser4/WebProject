@@ -1,5 +1,5 @@
 <?php
-include("../Interfaces/IDataAccess.php");
+include("IDataAccess.php");
 class DataAccess implements IDataAccess {
     private $connection;
     public function createDBConnection($host, $user, $password, $dataBase) {

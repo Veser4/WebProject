@@ -1,10 +1,11 @@
 <?php
-    include('modules/moduleSQL.php');
-    $conn = createDBConnection();
+    include("Implementations/DataAccess.php");
+    $dbConnection = new DataAccess();
+    $s = $dbConnection->createDBConnection('localhost', 'root', '', 'blog');
     $sql = "SELECT * FROM post";
-    $result = $conn->query($sql);
+    $result = $dbConnection->doDBRequest($sql);
     $posts = ($result->num_rows > 0) ? $posts = $result->fetch_all(MYSQLI_ASSOC) : [];
-    closeDBConnection($conn);
+    $dbConnection->closeDBConnection();
 ?>
 
 <!DOCTYPE html>
