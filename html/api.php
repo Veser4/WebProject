@@ -1,10 +1,15 @@
 <?php
-    include("modules/moduleSQL.php");
     include("modules/moduleValidation.php");
+    const HOST = 'localhost';
+    const USERNAME = 'root';
+    const PASSWORD = '';
+    const DATABASE = 'blog';
+
 
     $method = $_SERVER['REQUEST_METHOD'];
-    $conn = createDBConnection();
-    $result = $conn->query("SELECT * FROM post");
+    $dbConnection = new DataAccess();
+    $dbConnection->createDBConnection(HOST, USERNAME, PASSWORD, DATABASE);
+    $result = $dbConnection->doDBRequest("SELECT * FROM post");
     $posts = ($result->num_rows > 0) ? $posts = $result->fetch_all(MYSQLI_ASSOC) : [];
     $expectedKeys = array_keys(end($posts));
     unset($expectedKeys[0]);
@@ -21,12 +26,12 @@
                 ('{$dataAsArray['title']}', '{$dataAsArray['subtitle']}',
                 '{$dataAsArray['content']}', '{$dataAsArray['author']}', '{$imageAuthor}.jpg', '{$dataAsArray['publish_date']}',
                 '{$imagePost}.jpg', '{$dataAsArray['featured']}');";
-                if ($conn->query($sql) === TRUE) {
+                if ($dbConnection->doDBRequest($sql) === TRUE) {
                     echo "New record created successfully";
                 } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
+                    echo "Error: " . $sql . "<br>" . $dbConnection->getConnection()->error;
                 }
             }
         }
     }
-    closeDBConnection($conn);
+    $dbConnection->closeDBConnection();
