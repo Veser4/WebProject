@@ -3,7 +3,7 @@
   $conn = createDBConnection();
   $sql = "SELECT * FROM post WHERE id = {$_GET['id']}";
   $result = $conn->query($sql);
-  $post = ($result->num_rows > 0) ? $post = $result->fetch_all(MYSQLI_ASSOC) : [];
+  $post = ($result->num_rows > 0) ? $result->fetch_all(MYSQLI_ASSOC) : [];
   closeDBConnection($conn);
   if (!(array_key_exists('id', $_GET)) || !(is_numeric($_GET['id'])) || ($result->num_rows == 0)) {
     header("Location: http://localhost:8001/pages/errorPage?type=404");
